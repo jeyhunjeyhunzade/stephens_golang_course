@@ -11,6 +11,11 @@ func main() {
 	// cards.saveToFile("my_cards")
 
 	// read existing deck from file
-	cards := newDeckFromFile("my_cardss")
+	// cards := newDeckFromFile("my_cardss")
+	// cards.print()
+
+	// create a new deck, shuffle it and print
+	cards := newDeck()
+	cards.shuffle()
 	cards.print()
 }
