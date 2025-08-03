@@ -39,3 +39,18 @@ func (d deck) toString() string {
 func (d deck) saveToFile(fileName string) error {
 	return os.WriteFile(fileName, []byte(d.toString()), 0666)
 }
+
+func newDeckFromFile(fileName string) deck {
+	byteSlice, err := os.ReadFile(fileName)
+
+	if err != nil {
+		// Option1: log the error, and return a call to newDeck()
+
+		// Option2: log the error, and quit the program
+		fmt.Println("Error: ", err)
+		os.Exit(1)
+	}
+
+	stringSlice := strings.Split((string(byteSlice)), ",")
+	return deck(stringSlice)
+}

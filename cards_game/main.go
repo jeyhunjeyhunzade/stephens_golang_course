@@ -6,6 +6,11 @@ func main() {
 	// hand.print()
 	// remainingDeck.print()
 
-	cards := newDeck()
-	cards.saveToFile("my_cards")
+	// create a new deck and save to file
+	// cards := newDeck()
+	// cards.saveToFile("my_cards")
+
+	// read existing deck from file
+	cards := newDeckFromFile("my_cardss")
+	cards.print()
 }
