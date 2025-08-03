@@ -30,7 +30,7 @@ func (d deck) print() { // receiver function
 	}
 }
 
-func deal(d deck, handSize int) (deck, deck) { // returning multople values on one func
+func deal(d deck, handSize int) (deck, deck) { // returning multiple values on one func
 	return d[:handSize], d[handSize:]
 }
 
