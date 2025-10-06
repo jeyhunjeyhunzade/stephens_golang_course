@@ -5,6 +5,7 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"time"
 )
 
 
@@ -34,7 +35,17 @@ func main () {
 
 	// more readable version
 	for l := range c {
-		go checkLink(l, c)
+		// OLD: not proper implementation
+		// it's blocking the main routine for 5 seconds every time
+		// time.Sleep(5 * time.Second) // 5 * time.Second for pausing 5 seconds
+		// go checkLink(l, c)
+
+		//function literal:
+		go func(link string) {
+			time.Sleep(5 * time.Second)
+			checkLink(link, c)
+			fmt.Println("------")
+		}(l)
 	}
 }
 
