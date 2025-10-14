@@ -7,9 +7,9 @@ func main() {
 
 	for _, num := range nums {
 		if num%2 != 0 {
-			fmt.Println(num, "is odd")
+			fmt.Println(num, "is odd!")
 		} else {
-			fmt.Println(num, "is even")
+			fmt.Println(num, "is even!")
 		}
 	}
 }
